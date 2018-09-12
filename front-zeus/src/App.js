@@ -9,6 +9,8 @@ import "./App.css";
 import Router from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';
 import { Switch } from "react-router-dom";
+import CardModal from './containers/CardModal'
+
 
 
 
@@ -17,7 +19,7 @@ class App extends Component {
     super(props);
 
 
-console.log('this is log' ,props.log)
+
 
   const getAll = () => {
     fetch("http://localhost:3000/getall")
@@ -44,7 +46,9 @@ console.log('this is log' ,props.log)
 
             <Route path="/detail/:id" component={Detail} />
           </Switch>
+          <CardModal
 
+            />
         </div>
     </Router>
     );

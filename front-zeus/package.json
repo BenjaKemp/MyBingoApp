@@ -31,6 +31,7 @@
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "bootstrap": "^4.1.1",
+    "prettier": "1.14.2",
     "redux": "^4.0.0"
   }
 }

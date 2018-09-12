@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { selectWord } from "../actions/index";
 import { SingleCard } from "./SingleCard";
-import CardModal from './CardModal'
 import "./containers.css";
 import { Link } from "react-router-dom";
 
@@ -12,6 +11,12 @@ class Board extends Component {
   state = {
     selectedOption: undefined
   }
+  handleClearSelectedOption = () => {
+  console.log('here here here')
+  this.setState(()=>({
+    selectedOption: undefined
+  }))
+}
 
   renderList() {
     return this.props.words.map((word, index) => {
@@ -36,6 +41,7 @@ class Board extends Component {
         <div className="background">
           <div className="wrapper">{this.renderList()}</div>
         </div>
+
     </div>
     );
   }
@@ -54,9 +60,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);
-
-
-
-// <CardModal
-//   selectedOption={this.state.selectedOption}
-//   handleClearSelectedOption={this.handleClearSelectedOption}/>

@@ -6,7 +6,7 @@ const data = require('../API');
 
 async function load() {
   console.log('Loading');
-  
+
   await Promise.all(data.map(async item => {
     const pic = new PicObject(item);
 
